@@ -22,7 +22,7 @@ public class RankingController {
 
     @RequestMapping(value = "/rank", method = RequestMethod.POST)
     public RankingResponse getRankedHotels(@RequestBody RankingRequest rankingRequest) throws IOException {
-        PredictionResponse prediction = predictionService.getPrediction(rankingRequest);
-        return sortComparator.sortHotels(prediction);
+        PredictionResponse predictionResponse = predictionService.getPrediction(rankingRequest);
+        return sortComparator.sortHotels(predictionResponse);
     }
 }

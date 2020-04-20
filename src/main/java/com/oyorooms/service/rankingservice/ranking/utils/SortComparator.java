@@ -9,9 +9,9 @@ import java.util.*;
 @Component
 public class SortComparator {
 
-    public RankingResponse sortHotels(PredictionResponse response)
+    public RankingResponse sortHotels(PredictionResponse predictionResponse)
     {
-        Map<String, Double> map = response.getResponse();
+        Map<String, Double> map = predictionResponse.getResponse();
         List<Map.Entry<String, Double> > hotelList = new LinkedList<>(map.entrySet());
         Collections.sort(hotelList, (hotel1, hotel2) -> (hotel2.getValue()).compareTo(hotel1.getValue()));
         List<String> sortedHotel = new ArrayList<>();
